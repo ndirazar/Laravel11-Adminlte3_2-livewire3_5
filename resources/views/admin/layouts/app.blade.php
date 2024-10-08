@@ -28,7 +28,9 @@
     <link rel="stylesheet" href="{{ asset('admin/plugins/daterangepicker/daterangepicker.css') }}">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('admin/plugins/summernote/summernote-bs4.min.css') }}">
+
     @livewireStyles
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -38,13 +40,15 @@
             <img class="animation__shake" src="admin/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
         </div>
         <!-- Navbar -->
-        @include('admin.layouts.nav-top');
+        @include('admin.layouts.nav-top')
         <!-- Main Sidebar Container -->
-        @include('admin.layouts.side-nav');
+        @include('admin.layouts.side-nav')
         <!-- Content Wrapper. Contains page content -->
+
         <div class="content-wrapper">
             @yield('content')
         </div>
+
         <!-- /.content-wrapper -->
         <footer class="main-footer">
             <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
@@ -94,6 +98,7 @@
     <script>
         console.log('App Layout ==> OK');
     </script>
+
     @livewireScripts
 </body>
 

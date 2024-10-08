@@ -21,6 +21,7 @@ class Counter extends Component
 
     public function render()
     {
-        return view('livewire.counter');
+        // return view('livewire.counter')->layout('admin.layouts.app');
+        return view('livewire.comercio.counter');
     }
 }
