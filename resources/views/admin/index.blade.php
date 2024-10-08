@@ -21,7 +21,11 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
-            <h1>Hi</h1>
+            <div class="card">
+                <div class="card-body">
+                    @livewire('counter')
+                </div>
+            </div>
         </div>
     </section>
 
