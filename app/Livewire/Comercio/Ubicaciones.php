@@ -41,7 +41,7 @@ class Ubicaciones extends AdminComponent
     public function render()
     {
         return view('livewire.comercio.ubicaciones',[
-            'ubicaciones' => $this->ubicaciones]);
+            'ubicaciones' => $this->ubicaciones])->layout('admin.layouts.app');
 
     }
 }
