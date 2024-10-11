@@ -9,22 +9,17 @@ class Ubicaciones extends AdminComponent
 {
     public $searchTerm = '';
 
-    public $hola = null;
+    public $state = [];
 
     public $ubicaciones = [];
 
+    public $ubicacion = null;
+
+    public $showEditModal = false;
+
     public $count = 2;
+
     public $variable = Null;
-
-    public function increment()
-    {
-        $this->count++;
-    }
-
-    public function decrement()
-    {
-        $this->count--;
-    }
 
     public function mount()
     {
@@ -38,6 +33,19 @@ class Ubicaciones extends AdminComponent
                                       ->orderBy('razon_social', 'asc')
                                       ->get();
     }
+
+    public function editaComercio(Ubicacion $ubicacion)
+    {
+        $this->showEditModal = true;
+
+        $this->ubicacion = $ubicacion;
+
+        $this->state = $ubicacion->toArray();
+
+        // $this->dispatch('show-form');
+        $this->dispatch('open-modal');
+    }
+
     public function render()
     {
         return view('livewire.comercio.ubicaciones',[
