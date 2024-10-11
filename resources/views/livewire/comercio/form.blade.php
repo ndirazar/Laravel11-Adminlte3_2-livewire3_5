@@ -7,9 +7,9 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">
                         @if ($showEditModal)
-                            <span>Editar Cliente</span>
+                            <span>Editar Comercio</span>
                         @else
-                            <span>Nueva Cliente</span>
+                            <span>Nueva Comercio</span>
                         @endif
                     </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -17,17 +17,19 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    {{-- Razon Social --}}
                     <div class="form-group">
-                        <label for="nombre">Apellido y Nombre</label>
-                        <input type="text" wire:model.defer="state.nombre"
+                        <label for="nombre">Razon Social</label>
+                        <input type="text" wire:model.defer="state.razon_social"
                             class="form-control form-control-sm text-capitalize @error('nombre') is-invalid @enderror"
-                            id="nombre" aria-describedby="nombre" placeholder="Apellido y Nombre">
-                        @error('nombre')
+                            id="razon_social" aria-describedby="razon_social" placeholder="Razon Social">
+                        @error('razon_social')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                         @enderror
                     </div>
+                    {{-- Direccion --}}
                     <div class="form-group">
                         <label for="direccion">Dirección</label>
                         <input type="text" wire:model.defer="state.direccion"
@@ -39,7 +41,20 @@
                             </div>
                         @enderror
                     </div>
+                    {{-- rubro --}}
                     <div class="form-group">
+                        <label for="rubro">Rubro</label>
+                        <input type="text" wire:model.defer="state.rubro"
+                            class="form-control form-control-sm text-capitalize @error('rubro') is-invalid @enderror"
+                            id="rubro" aria-describedby="rubro" placeholder="Rubro">
+                        @error('rubro')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    {{-- Telefono --}}
+                    {{-- <div class="form-group">
                         <label for="telefono">Celular</label>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend input-group-prepend-sm">
@@ -63,7 +78,6 @@
                             @error('email') <span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-md-6">
                             <label for="limite">Límite de Crédito</label>
@@ -91,7 +105,7 @@
 
                         </div>
 
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal"><i

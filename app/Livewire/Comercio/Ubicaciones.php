@@ -42,7 +42,8 @@ class Ubicaciones extends AdminComponent
 
         $this->state = $ubicacion->toArray();
 
-        // $this->dispatch('show-form');
+        // dd($this->state);
+
         $this->dispatch('open-modal');
     }
 

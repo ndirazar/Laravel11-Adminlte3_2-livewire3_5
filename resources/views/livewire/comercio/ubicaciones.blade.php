@@ -23,48 +23,56 @@
             {{-- <div class="card-header bg-gradient-info">
                 <h5 class="text-white font-weight-bolder ">Habilitaciones Comerciales</h5>
             </div> --}}
-                <x-search-input wire:model.live="searchTerm" />
-                <div class="card-body">
-                    <table class="table table-sm">
-                        <thead>
-                            <tr>
-                                <th class="text-sm">Razón Social</th>
-                                <th class="text-sm">Dirección</th>
-                                <th class="text-sm">Rubro</th>
-                                <th colspan="2" class="small text-bold text-center">Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+            <x-search-input wire:model.live="searchTerm" />
+            <div class="card-body">
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th class="text-sm">Razón Social</th>
+                            <th class="text-sm">Dirección</th>
+                            <th class="text-sm">Rubro</th>
+                            <th colspan="2" class="small text-bold text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                            @foreach ($ubicaciones as $ubicacion)
-                                <tr>
-                                    <td class="text-sm">{{ $ubicacion->razon_social }}</td>
-                                    <td class="text-sm">{{ $ubicacion->direccion }}</td>
-                                    <td class="text-sm">{{ $ubicacion->rubro }}</td>
-                                    <td class="small text-center">
-                                        <a href="" wire:click.prevent="editaComercio({{ $ubicacion }})">
-                                            <i class="fa fa-edit mr-3 text-info" data-toggle="tooltip"
-                                                data-placement="top" title="Editar ubicacion"></i>
-                                        </a>
-                                        <a href="#">
-                                            <i class="fas fa-comment-dollar text-danger" data-toggle="tooltip"
-                                                data-placement="top" title="Cobrar Cliente"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                    @if ($ubicaciones->isEmpty())
-                        <p>No se encontraron resultados.</p>
-                    @endif
-                </div>
+                        @foreach ($ubicaciones as $ubicacion)
+                            <tr>
+                                <td class="text-sm">{{ $ubicacion->razon_social }}</td>
+                                <td class="text-sm">{{ $ubicacion->direccion }}</td>
+                                <td class="text-sm">{{ $ubicacion->rubro }}</td>
+                                <td class="small text-center">
+                                    <a href="" wire:click.prevent="editaComercio({{ $ubicacion }})">
+                                        <i class="fa fa-edit mr-3 text-info" data-toggle="tooltip" data-placement="top"
+                                            title="Editar ubicacion"></i>
+                                    </a>
+                                    <a href="#">
+                                        <i class="fas fa-comment-dollar text-danger" data-toggle="tooltip"
+                                            data-placement="top" title="Cobrar Cliente"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                @if ($ubicaciones->isEmpty())
+                    <p>No se encontraron resultados.</p>
+                @endif
             </div>
         </div>
+    </div>
     <script>
-        console.log('Modalddddddddddd');
+        console.log('Modal');
         document.addEventListener('open-modal', event => {
             $('#form').modal('show'); // Abre el modal con el ID 'form'
         });
-    </script>
+        document.addEventListener('livewire:load', function() {
+                $('#razon_social').trigger('focus').select();
+                console.log("Iniciando...");
+            });
+            // console.log($("#razon_social").val());
+            // console.log(document.getElementById("razon_social").value);
+
+        </script>
+
 </div>
