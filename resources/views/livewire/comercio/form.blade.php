@@ -2,7 +2,7 @@
 <div class="modal fade" id="form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true" wire:ignore.self>
     <div class="modal-dialog" role="document">
-        <form autocomplete="off" wire:submit.prevent="{{ $showEditModal ? 'updateCliente' : 'createCliente' }}">
+        <form autocomplete="off" wire:submit.prevent="{{ $showEditModal ? 'updateComercio' : 'createCliente' }}">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">

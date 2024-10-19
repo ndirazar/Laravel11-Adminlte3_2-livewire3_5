@@ -13,7 +13,6 @@ class ComercioMapa extends AdminComponent
 
         $ubicaciones = Ubicacion::all();
 
-
         return view('livewire.comercio.comercio-mapa',compact('ubicaciones'))->layout('admin.layouts.app');
     }
 }

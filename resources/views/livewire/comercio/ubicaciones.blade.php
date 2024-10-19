@@ -63,6 +63,7 @@
     </div>
     <script>
         console.log('Modal');
+
         document.addEventListener('open-modal', event => {
             $('#form').modal('show'); // Abre el modal con el ID 'form'
         });
@@ -71,8 +72,13 @@
                 console.log("Iniciando...");
             });
             // console.log($("#razon_social").val());
+            // Display an info toast with no title
+        document.addEventListener('shown.bs.modal', function() {
+            $('#razon_social').trigger('focus').select();
+                console.log("Iniciando...");
+            })
             // console.log(document.getElementById("razon_social").value);
-
+  
         </script>
 
 </div>

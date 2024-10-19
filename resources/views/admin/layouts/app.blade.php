@@ -29,6 +29,8 @@
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('admin/plugins/summernote/summernote-bs4.min.css') }}">
 
+    <link rel="stylesheet" href="admin/dist/css/toastr.scss" >
+    
     @livewireStyles
 
 </head>
@@ -94,9 +96,12 @@
     <script src="{{ asset('admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('admin/dist/js/adminlte.js') }}"></script>
+    <script src="{{ asset('admin/dist/js/backend.js')}}"></script>
+    <script src="{{ asset('admin/dist/js/toastr.js')}}"></script>
 
     <script>
         console.log('App Layout ==> OK');
+        // Display a success toast with no title
     </script>
 
     @livewireScripts
